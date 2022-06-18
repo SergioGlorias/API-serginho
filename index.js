@@ -9,6 +9,7 @@ fastify.get('/', async (request, reply) => {
 })
 
 fastify.get("/headers", async (request, reply) => {
+    delete request.headers.host
     return request.headers
 })
 
