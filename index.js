@@ -4,7 +4,7 @@ const fastify = require('fastify')({
     trustProxy: true,
 })
 
-fastify.register(require('fastify-cors'), {
+fastify.register(require('@fastify/cors'), {
     origin: '*',
     methods: ['GET']
 })
