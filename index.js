@@ -4,6 +4,11 @@ const fastify = require('fastify')({
     trustProxy: true,
 })
 
+fastify.register(require('fastify-cors'), {
+    origin: '*',
+    methods: ['GET']
+})
+
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
 })
