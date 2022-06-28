@@ -1,3 +1,4 @@
+require('dotenv').config()
 const fastify = require('fastify')({
     logger: true,
     ignoreTrailingSlash: true,
@@ -17,6 +18,8 @@ fastify.get("/headers", async (request, reply) => {
     delete request.headers.host
     return request.headers
 })
+
+fastify.register(require("./hypixel/index"), { prefix: '/hypixel' })
 
 const start = async () => {
     try {
