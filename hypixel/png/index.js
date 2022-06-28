@@ -41,7 +41,7 @@ module.exports = async (instance, opts, done) => {
         ctx.fillStyle = '#c604f2'
         ctx.fillText("Karma: " + pHy.karma , 500, 120)
 
-        return canvas.createPNGStream()
+        reply.type("image/png").send(canvas.createPNGStream())
 
     })
 
