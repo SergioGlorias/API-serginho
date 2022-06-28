@@ -23,7 +23,7 @@ fastify.register(require("./hypixel/index"), { prefix: '/hypixel' })
 
 const start = async () => {
     try {
-        await fastify.listen(8745)
+        await fastify.listen({port: 8745})
         fastify.log.info(`server listening on ${fastify.server.address().port}`)
     } catch (err) {
         fastify.log.error(err)
