@@ -41,6 +41,7 @@ module.exports = async (instance, opts, done) => {
         ctx.fillStyle = '#c604f2'
         ctx.fillText("Karma: " + pHy.karma , 500, 120)
 
+        reply.header("cache-control", "max-age=0")
         reply.type("image/png").send(await canvas.toBuffer())
 
     })
