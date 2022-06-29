@@ -12,9 +12,9 @@ module.exports = async (instance, opts, done) => {
 
     instance.get('/general/:User', async function (request, reply) {
 
-        if (!request.params.User.endsWith(".png")) return { error: "need '.png'" }
-
-        const user = request.params.User.split(".")[0]
+        const user = request.params.User.endsWith(".png") 
+            ? request.params.User.substring(0, request.params.User.length - 4) 
+            : request.params.User;
 
         const pHy = await hypixel.getPlayer(user)
 
