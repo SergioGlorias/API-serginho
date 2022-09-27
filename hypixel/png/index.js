@@ -174,7 +174,15 @@ module.exports = async (instance, opts, done) => {
 
     ctx.font = '25px "League Gothic"';
     ctx.fillStyle = "#ddd200";
-    ctx.fillText(`${pHy.achievements.generalLuckiestOfTheSea}`, 190, 100);
+    ctx.fillText(
+      `${
+        !pHy.achievements.generalLuckiestOfTheSea
+          ? 0
+          : pHy.achievements.generalLuckiestOfTheSea
+      }`,
+      190,
+      100
+    );
 
     const imgPuffer = await loadImage(
       readFileSync("./hypixel/png/imgs/Pufferfish_%28item%29_JE5_BE2.png")
@@ -182,7 +190,15 @@ module.exports = async (instance, opts, done) => {
 
     ctx.drawImage(imgPuffer, 260, 75, 30, 30);
 
-    ctx.fillText(`${pHy.achievements.generalMasterLure}`, 300, 100);
+    ctx.fillText(
+      `${
+        !pHy.achievements.generalMasterLure
+          ? 0
+          : pHy.achievements.generalMasterLure
+      }`,
+      300,
+      100
+    );
 
     const imgJunk = await loadImage(
       readFileSync("./hypixel/png/imgs/Rotten_Flesh_JE3_BE2.png")
@@ -190,7 +206,15 @@ module.exports = async (instance, opts, done) => {
 
     ctx.drawImage(imgJunk, 370, 75, 30, 30);
 
-    ctx.fillText(`${pHy.achievements.generalTrashiestDiver}`, 410, 100);
+    ctx.fillText(
+      `${
+        !pHy.achievements.generalTrashiestDiver
+          ? 0
+          : pHy.achievements.generalTrashiestDiver
+      }`,
+      410,
+      100
+    );
 
     reply
       .header("Cache-Control", "no-store, no-cache")
